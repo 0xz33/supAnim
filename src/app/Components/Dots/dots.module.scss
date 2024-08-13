@@ -1,21 +1,10 @@
 @keyframes blink {
   0%,
   100% {
-    opacity: 0.7;
+    opacity: 1;
   }
   50% {
     opacity: 0.3;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    background-color: #ccff00;
-    opacity: 1;
-  }
-  100% {
-    background-color: #efeef6;
-    opacity: 0.7;
   }
 }
 
@@ -23,7 +12,6 @@
   display: grid;
   grid-template-columns: repeat(160, 16px);
   grid-template-rows: repeat(16, 16px);
-  gap: 16px;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -34,21 +22,10 @@
   height: 16px;
   width: 16px;
   background-color: #efeef6;
-  border-radius: 0px 4px 0px 4px;
   opacity: 0;
   transition: background-color 0.2s ease, opacity 0.2s ease;
 
   &:not(:hover):not(.fading) {
     animation: blink 2s infinite;
-  }
-
-  &:hover {
-    background-color: #ccff00;
-    opacity: 1;
-    animation: none;
-  }
-
-  &.fading {
-    animation: fadeOut 2s ease-out forwards;
   }
 }
